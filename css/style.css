@@ -1,0 +1,1254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* CSS Variables for colors */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg: #fff;
+    --card-bg: #fff;
+    --accent-color: #007bff;
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f4f4f4;
+    --header-bg: #1e1e1e;
+    --card-bg: #2c2c2c;
+    --accent-color: #88aaff; /* A lighter blue for dark mode */
+    --shadow-color: rgba(0,0,0,0.3);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: 1rem 5%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center; /* Align items for the toggle */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#cart-count {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+main {
+    padding: 2rem 5%;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    text-align: center;
+    padding: 1.5rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.product-card .price {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    margin-left: 0.5rem;
+}
+
+/* Product Details Page */
+#product-details-container {
+    display: flex;
+    gap: 2rem;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#product-details-container img {
+    max-width: 40%;
+}
+
+/* Checkout Page */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cart-total {
+    text-align: right;
+    margin-top: 2rem;
+}
+
+/* Dark Mode Toggle Switch Styles */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent-color);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Responsive adjustments (optional, but good practice) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #product-details-container {
+        flex-direction: column;
+    }
+
+    #product-details-container img {
+        max-width: 100%;
+    }
+}
+
+/* Add these styles to your existing style.css */
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item-info {
+    display: flex; /* Use flexbox for image and text alignment */
+    align-items: center;
+    gap: 1rem; /* Space between image and text */
+}
+
+.cart-item-image-link {
+    display: block; /* Make the link a block element for image containment */
+}
+
+.cart-item-image {
+    width: 60px;  /* Set a fixed width for cart item images */
+    height: 60px; /* Set a fixed height for cart item images */
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: 4px; /* Slightly rounded corners for images */
+}
+
+.cart-item-info a {
+    text-decoration: none; /* Remove underline from product name link */
+    color: var(--text-color); /* Inherit text color */
+    font-weight: 600;
+}
+
+.cart-item-info a:hover {
+    color: var(--accent-color); /* Highlight on hover */
+}
+
+/* Loading Animation */
+.product-card {
+    /* Existing styles for product-card */
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below its final position */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition for animation */
+}
+
+.product-card.loaded {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to final position */
+}
+
+/* Hover Effects */
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Lift and slightly enlarge */
+    box-shadow: 0 8px 16px var(--shadow-color); /* More pronounced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Ensure the transition property is present on the base .product-card as well, which it should be from the loading animation */
+
+/* Button Hover */
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px); /* Slightly lift button on hover */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Add to Cart Button Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); background-color: var(--accent-color); }
+    100% { transform: scale(1); }
+}
+
+.btn.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Cart Icon Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+#cart-count.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Remove the initial opacity and transform from .product-card for scroll animation */
+.product-card {
+    /* opacity: 0; */ /* REMOVE THIS */
+    /* transform: translateY(20px); */ /* REMOVE THIS */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Still keep smooth transition */
+}
+
+/* New class for elements that should animate into view on scroll */
+.animate-in {
+    opacity: 0;
+    transform: translateY(50px); /* Start further down */
+}
+
+.animate-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Checkout Page Animations */
+.cart-item {
+    /* Existing styles for cart-item */
+    opacity: 0; /* Start invisible for animation */
+    transform: translateX(-20px); /* Start slightly to the left */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Smooth transition */
+}
+
+.cart-item.loaded { /* Class to trigger animation when items are rendered */
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Place Order Button success animation (optional, but nice) */
+@keyframes success-pulse {
+    0% { background-color: var(--accent-color); }
+    50% { background-color: #28a745; /* A success green */ transform: scale(1.02); }
+    100% { background-color: var(--accent-color); transform: scale(1); }
+}
+
+#place-order-btn.success {
+    animation: success-pulse 0.8s ease-in-out;
+}
+
+/* Add this to your style.css */
+
+/* Animation for the Product Details Page */
+#product-details-container {
+    /* Existing styles for #product-details-container */
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below its final position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+#product-details-container.loaded {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to final position */
+}
+
+/* Add/Modify these styles in your style.css */
+
+/* Base button style (already exists, ensuring it looks good) */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.8rem 1.5rem; /* Slightly larger padding for better click area */
+    border-radius: 8px; /* Slightly more rounded corners */
+    text-decoration: none;
+    margin-top: 1.5rem; /* More space above the button */
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem; /* Slightly larger text */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.btn:hover {
+    opacity: 0.95; /* Less opacity change */
+    transform: translateY(-3px); /* More pronounced lift */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Stronger shadow on hover */
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    margin-left: 0.5rem;
+}
+
+/* Place Order Button specific style (if needed, but .btn handles most) */
+#place-order-btn {
+    width: auto; /* Ensure it doesn't stretch fully if it's the only button */
+    padding: 1rem 2rem; /* Larger for primary action */
+    margin-top: 2rem; /* More prominent spacing */
+    font-size: 1.2rem;
+}
+
+/* Place Order Button success animation */
+@keyframes success-pulse {
+    0% {
+        background-color: var(--accent-color);
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    30% {
+        background-color: #28a745; /* A vibrant success green */
+        transform: scale(1.03); /* Slightly larger pulse */
+        box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4); /* Green shadow */
+    }
+    100% {
+        background-color: var(--accent-color); /* Return to original color */
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+}
+
+#place-order-btn.success {
+    animation: success-pulse 1s ease-in-out forwards; /* 'forwards' keeps the final state */
+}
+
+
+/* Add these styles to your style.css */
+
+/* Filters Section */
+.filters-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1rem; /* Space between filter elements */
+}
+
+.search-bar input[type="text"] {
+    width: 250px;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--bg-color); /* Match background */
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.category-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-filter label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.category-filter select {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    appearance: none; /* Remove default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C197.3L159.2%2C69.5c-4.4-4.4-11.4-4.4-15.8%2C0L5.4%2C197.3c-4.4%2C4.4-4.4%2C11.4%2C0%2C15.8c4.4%2C4.4%2C11.4%2C4.4%2C15.8%2C0l130.5-130.6l130.5%2C130.6c4.4%2C4.4%2C11.4%2C4.4%2C15.8%2C0C291.4%2C208.7%2C291.4%2C201.7%2C287%2C197.3z%22%2F%3E%3C%2Fsvg%3E'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.category-filter select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Dark mode adjustments for filters */
+.dark-mode .search-bar input[type="text"],
+.dark-mode .category-filter select {
+    border-color: #555;
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+/* Responsive adjustments for filters */
+@media (max-width: 768px) {
+    .filters-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .search-bar input[type="text"] {
+        width: 100%; /* Full width on small screens */
+    }
+    .category-filter {
+        width: 100%;
+        justify-content: space-between; /* Space out label and select */
+    }
+    .category-filter select {
+        width: calc(100% - 80px); /* Adjust width to fit label */
+    }
+}
+
+/* Add these styles to your existing style.css */
+
+/* Cart item layout improvements */
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between subtotal and remove button */
+}
+
+.item-subtotal {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    min-width: 60px; /* Ensure space for subtotal */
+    text-align: right;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden; /* To keep buttons snug */
+    margin-top: 0.5rem; /* Space below name */
+    width: fit-content; /* Only take necessary width */
+}
+
+.quantity-btn {
+    background-color: var(--button-bg); /* Use a suitable background var */
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    min-width: 35px; /* Ensure buttons are wide enough */
+    text-align: center;
+}
+
+.quantity-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: scale(1.05); /* Slight pop on hover */
+}
+
+.quantity-btn:active {
+    transform: scale(0.95); /* Click feedback */
+}
+
+.item-quantity {
+    padding: 0.5rem 0.8rem;
+    font-weight: 600;
+    min-width: 30px; /* Ensure quantity display has enough space */
+    text-align: center;
+    color: var(--text-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+/* Remove Button */
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #dc3545; /* Red color for removal */
+    font-size: 1.5rem; /* Larger 'X' */
+    cursor: pointer;
+    padding: 0 0.5rem;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.remove-item-btn:hover {
+    color: #c82333; /* Darker red on hover */
+    transform: scale(1.1);
+}
+
+.remove-item-btn:active {
+    transform: scale(0.9);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .quantity-btn {
+    background-color: #555;
+    color: #eee;
+}
+
+.dark-mode .quantity-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.dark-mode .item-quantity {
+    border-color: #444;
+}
+
+/* Add these styles to your style.css */
+
+.stock-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: -0.5rem; /* Closer to price */
+    margin-bottom: 0.5rem; /* Space before buttons */
+}
+
+.stock-info.out-of-stock {
+    color: #dc3545; /* Red for out of stock */
+    font-weight: bold;
+}
+
+/* Specific message for stock limit in cart */
+.stock-limit-msg {
+    font-size: 0.85em;
+    color: #ffc107; /* Orange for warning */
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.stock-limit-msg.out-of-stock {
+    color: #dc3545; /* Red for out of stock message */
+}
+
+/* Disable styles for buttons when out of stock */
+.add-to-cart-btn[disabled],
+.increase-quantity[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #ccc; /* Grey out disabled buttons */
+    box-shadow: none;
+    transform: none; /* No hover effect when disabled */
+}
+
+.add-to-cart-btn[disabled]:hover,
+.increase-quantity[disabled]:hover {
+    background-color: #ccc; /* Keep grey on hover */
+    color: #fff;
+}
+
+/* Dark mode specific disabled styles */
+.dark-mode .add-to-cart-btn[disabled],
+.dark-mode .increase-quantity[disabled] {
+    background-color: #444;
+    color: #888;
+}
+
+.dark-mode .add-to-cart-btn[disabled]:hover,
+.dark-mode .increase-quantity[disabled]:hover {
+    background-color: #444;
+    color: #888;
+}
+
+/* Add these styles to your style.css */
+
+/* Custom Alert Modal/Toast */
+.custom-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start invisible for fade-in */
+    pointer-events: none; /* Allow clicks through when invisible */
+    transition: opacity 0.3s ease-out; /* Smooth fade-in/out */
+}
+
+.custom-modal.show {
+    opacity: 1;
+    pointer-events: auto; /* Enable clicks when visible */
+}
+
+.custom-modal-content {
+    background-color: var(--bg-color); /* Matches page background or card background */
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+    max-width: 400px; /* Max width for readability */
+    transform: translateY(-50px); /* Start slightly above for slide-down effect */
+    transition: transform 0.3s ease-out, background-color 0.3s ease;
+}
+
+.custom-modal.show .custom-modal-content {
+    transform: translateY(0); /* Slide down to center */
+}
+
+.custom-modal-content h3 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.custom-modal-content p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal specific button styling - ensure it uses .btn styles */
+#modal-confirm-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    margin-top: 0; /* Override default button margin */
+}
+
+/* Dark mode adjustments for modal */
+.dark-mode .custom-modal-content {
+    background-color: var(--card-bg); /* Use dark card background for contrast */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.dark-mode .close-modal {
+    color: #bbb;
+}
+
+.dark-mode .close-modal:hover,
+.dark-mode .close-modal:focus {
+    color: var(--accent-color);
+}
+
+/* Add these styles to your style.css */
+
+/* Auth Page Styling */
+.auth-page, .profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align at the top */
+    min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+    padding: 30px 20px;
+}
+
+.auth-container, .profile-container {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.auth-container h2, .profile-container h2, .profile-container h3 {
+    color: var(--heading-color);
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.auth-container h3 {
+    margin-top: 30px;
+}
+
+.form-toggle {
+    display: flex;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.form-toggle button {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-toggle button.active {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+.form-toggle button:hover:not(.active) {
+    background-color: var(--light-gray);
+}
+
+.dark-mode .form-toggle button {
+    background-color: #444;
+    color: #eee;
+}
+
+.dark-mode .form-toggle button.active {
+    background-color: var(--accent-color);
+}
+
+.dark-mode .form-toggle button:hover:not(.active) {
+    background-color: #555;
+}
+
+
+.auth-form {
+    display: none; /* Hidden by default */
+    text-align: left;
+}
+
+.auth-form.active {
+    display: block; /* Shown when active */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 12px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Auth button specific styles */
+.auth-form .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+/* Profile Page */
+.profile-container h2 {
+    margin-bottom: 15px;
+}
+
+.profile-container #logout-btn {
+    margin-bottom: 30px;
+}
+
+.profile-container h3 {
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.order-history-item {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .order-history-item {
+    background-color: #333;
+    border-color: #555;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.order-history-item h4 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.order-history-item p {
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.order-items-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 15px;
+}
+
+.dark-mode .order-items-list {
+    border-color: #666;
+}
+
+.order-items-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.order-items-list li:last-child {
+    border-bottom: none;
+}
+
+.order-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: right;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    color: var(--heading-color);
+}
+
+.dark-mode .order-total {
+    border-color: #666;
+}
+
+/* Auth links in header (managed by JS) */
+#auth-links {
+    margin-left: 15px; /* Adjust spacing as needed */
+}
+
+#auth-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#auth-links a:hover {
+    background-color: var(--light-gray);
+    color: var(--accent-color);
+}
+
+.dark-mode #auth-links a:hover {
+    background-color: #444;
+}
+
+
+/* Product Reviews Section */
+.product-reviews {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-reviews h2 {
+    color: var(--heading-color);
+    margin-bottom: 25px;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.product-reviews .submit-review-heading {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 25px;
+}
+
+.dark-mode .product-reviews h2,
+.dark-mode .product-reviews .submit-review-heading {
+    border-color: #555;
+}
+
+/* Average Rating Display */
+.average-rating-display {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.dark-mode .average-rating-display {
+    border-color: #666;
+}
+
+.average-rating-display h3 {
+    font-size: 1.6rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.average-rating-display p {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Star Rating Display (Read-Only) */
+.stars-display .fa-star,
+.star-rating .fa-star {
+    color: #ffc107; /* Gold color for stars */
+    font-size: 1.5rem;
+    margin: 0 2px;
+    transition: transform 0.2s ease-out;
+}
+
+.stars-display .fa-star.far {
+    color: #ccc; /* Outline star for empty */
+}
+
+/* Star Rating Input (Interactive) */
+.star-rating {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.star-rating .fa-star.far:hover,
+.star-rating .fa-star.fas:hover {
+    transform: scale(1.1);
+}
+
+.star-rating .fa-star.fas {
+    color: #ffc107;
+}
+
+/* Individual Review Item */
+.review-item {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .review-item {
+    background-color: #333;
+    border-color: #555;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.review-item .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 8px;
+}
+
+.dark-mode .review-item .review-header {
+    border-color: #666;
+}
+
+.review-item .reviewer-info {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.review-item .review-date {
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+}
+
+.review-item .review-comment {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-top: 10px;
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+}
+
+.no-reviews-message, #login-to-review-message {
+    color: var(--text-color-light);
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Review Form */
+.review-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.review-form .form-group {
+    margin-bottom: 20px;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.review-form textarea {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 12px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.review-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.review-form .btn {
+    width: auto;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    display: block;
+    margin: 20px auto 0; /* Center the button */
+}
+
+/* ... (existing CSS) ... */
+
+/* Related Products Section */
+.related-products-section {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+    max-width: 1200px; /* Wider than review section */
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-products-section h2 {
+    color: var(--heading-color);
+    margin-bottom: 25px;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.dark-mode .related-products-section h2 {
+    border-color: #555;
+}
+
+.related-products-section .product-grid {
+    margin-top: 20px;
+}
+
+.related-products-section .no-products-message {
+    color: var(--text-color-light);
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+}

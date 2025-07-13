@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 59.99,
+    "image": "images/headphone.png",
+    "description": "Experience immersive sound with these high-quality wireless headphones, featuring noise-cancellation and a 20-hour battery life.",
+    "category": "Audio",
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "name": "Mechanical Keyboard",
+    "price": 79.99,
+    "image": "images/keyboard.png",
+    "description": "A durable and responsive mechanical keyboard with customizable RGB backlighting, perfect for gaming and productivity.",
+    "category": "Peripherals",
+    "stock": 8 
+  },
+  {
+    "id": 3,
+    "name": "Gaming Mouse",
+    "price": 39.99,
+    "image": "images/mouse.png",
+    "description": "Get the edge in your favorite games with this ergonomic gaming mouse, featuring a high-precision sensor and programmable buttons.",
+    "category": "Peripherals",
+    "stock": 20 
+  },
+  {
+    "id": 4,
+    "name": "HD Webcam",
+    "price": 49.99,
+    "image": "images/webcam.png",
+    "description": "A 1080p HD webcam that delivers crystal-clear video, ideal for streaming, video conferencing, and online classes.",
+    "category": "Peripherals",
+    "stock": 5 
+  },
+  {
+    "id": 5,
+    "name": "Smartwatch Pro",
+    "price": 129.99,
+    "image": "images/smartwatch.png",
+    "description": "Track your fitness, receive notifications, and stay connected with this sleek and powerful smartwatch.",
+    "category": "Wearables",
+    "stock": 12 
+  },
+  {
+    "id": 6,
+    "name": "Portable Bluetooth Speaker",
+    "price": 45.50,
+    "image": "images/speaker.png",
+    "description": "Enjoy rich, powerful sound on the go with this compact and waterproof portable Bluetooth speaker.",
+    "category": "Audio",
+    "stock": 10 
+  },
+  {
+    "id": 7,
+    "name": "Ultra-Thin Laptop",
+    "price": 899.00,
+    "image": "images/laptop.png",
+    "description": "A lightweight yet powerful laptop with a stunning display and all-day battery life, perfect for work and entertainment.",
+    "category": "Computers",
+    "stock": 3 
+  },
+  {
+    "id": 8,
+    "name": "Immersive VR Headset",
+    "price": 299.99,
+    "image": "images/vr-headset.png",
+    "description": "Step into new worlds and experience gaming like never before with this comfortable and high-resolution VR headset.",
+    "category": "Gaming",
+    "stock": 7 
+  }
+]
