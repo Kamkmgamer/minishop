@@ -70,5 +70,14 @@
     "description": "Step into new worlds and experience gaming like never before with this comfortable and high-resolution VR headset.",
     "category": "Gaming",
     "stock": 7 
+  },
+    {
+    "id": 9,
+    "name": " Samsung Galaxy tab S10 ultra",
+    "price": 1099.99,
+    "image": "images/ Samsung Galaxy tab S10 ultra.png",
+    "description": "Step into new worlds and experience gaming like never before with this comfortable and high-resolution VR headset.",
+    "category": "Gaming",
+    "stock": 7 
   }
 ]
