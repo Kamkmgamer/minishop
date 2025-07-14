@@ -79,5 +79,94 @@
     "description": "Step into new worlds and experience taplets like never before with this comfortable and high-resolution taplet.",
     "category": "Taplet",
     "stock": 7 
+  },  {
+    "id": 10,
+    "name": "Noise-Cancelling Earbuds",
+    "price": 129.99,
+    "image": "images/earbuds.png",
+    "description": "Compact and powerful earbuds with active noise cancellation for an uninterrupted listening experience.",
+    "category": "Audio",
+    "stock": 25
+  },
+  {
+    "id": 11,
+    "name": "Curved Gaming Monitor",
+    "price": 349.99,
+    "image": "images/monitor.png",
+    "description": "Immerse yourself in games with this 27-inch curved gaming monitor, featuring a high refresh rate and low response time.",
+    "category": "Peripherals",
+    "stock": 6
+  },
+  {
+    "id": 12,
+    "name": "Wireless Charging Pad",
+    "price": 29.99,
+    "image": "images/charger.png",
+    "description": "Conveniently charge your compatible devices without cables using this sleek wireless charging pad.",
+    "category": "Accessories",
+    "stock": 30
+  },
+  {
+    "id": 13,
+    "name": "Smart Home Hub",
+    "price": 99.99,
+    "image": "images/smarthomehub.png",
+    "description": "Control all your smart home devices from one central hub, compatible with various ecosystems.",
+    "category": "Smart Home",
+    "stock": 9
+  },
+  {
+    "id": 14,
+    "name": "Portable SSD 1TB",
+    "price": 119.99,
+    "image": "images/ssd.png",
+    "description": "Fast and reliable external storage for all your files, perfect for professionals and gamers.",
+    "category": "Storage",
+    "stock": 18
+  },
+  {
+    "id": 15,
+    "name": "Professional Drone",
+    "price": 499.99,
+    "image": "images/drone.png",
+    "description": "Capture stunning aerial footage with this professional-grade drone, featuring 4K camera and extended flight time.",
+    "category": "Drones",
+    "stock": 4
+  },
+  {
+    "id": 16,
+    "name": "Digital Drawing Tablet",
+    "price": 149.99,
+    "image": "images/drawingtablet.png",
+    "description": "Unleash your creativity with this high-precision digital drawing tablet, ideal for artists and designers.",
+    "category": "Creative Tools",
+    "stock": 11
+  },
+  {
+    "id": 17,
+    "name": "Home Security Camera",
+    "price": 79.99,
+    "image": "images/securitycamera.png",
+    "description": "Keep an eye on your home with this smart security camera, offering motion detection and night vision.",
+    "category": "Smart Home",
+    "stock": 14
+  },
+  {
+    "id": 18,
+    "name": "Gaming Headset",
+    "price": 69.99,
+    "image": "images/gamingheadset.png",
+    "description": "Communicate clearly and hear every detail with this comfortable gaming headset, featuring surround sound.",
+    "category": "Gaming",
+    "stock": 16
+  },
+  {
+    "id": 19,
+    "name": "E-Reader",
+    "price": 89.99,
+    "image": "images/ereader.png",
+    "description": "Enjoy reading for hours with this lightweight e-reader, featuring an anti-glare screen and long battery life.",
+    "category": "Books & Media",
+    "stock": 22
   }
 ]
